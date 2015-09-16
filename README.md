@@ -18,6 +18,26 @@ $ gulp server
 
 ## Usage
 
+```
+handleKeyUp(e, editor) {
+    console.log(editor.getContent());
+}
+
+handleChange(e, editor) {
+    console.log(editor.getContent());
+}
+
+render() {
+    let me = this;
+    return (
+        <div>
+            <Tinymce onKeyup={me.handleKeyUp.bind(me)}
+                     onChange={me.handleChange.bind(me)}/>
+        </div>
+    );
+}
+```
+
 ### demo
 http://uxcore.github.io/uxcore/components/uxcore-tinymce/
 
