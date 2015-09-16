@@ -18,10 +18,20 @@ class Demo extends React.Component {
         }
     }
 
+    handleKeyUp(e, editor) {
+        console.log(editor.getContent());
+    }
+
+    handleChange(e, editor) {
+        console.log(editor.getContent());
+    }
+
     render() {
+        let me = this;
         return (
             <div>
-                <Tinymce onChange={(e)=>{console.log(e.target.getContent())}}/>
+                <Tinymce onKeyup={me.handleKeyUp.bind(me)}
+                         onChange={me.handleChange.bind(me)}/>
             </div>
         );
     }

@@ -39,14 +39,6 @@ class Tinymce extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        let me = this;
-        tinymce.init({
-            selector: "#mytextarea",
-            language: me.props.language
-        })
-    }
-
     componentWillMount() {
         this.id = this.id || util.uuid();
     }
