@@ -40,6 +40,9 @@ class Tinymce extends React.Component {
     }
 
     componentWillMount() {
+        if (typeof tinymce !== 'object') {
+            console.warn("TinyMCE is not found in global, init failed");
+        } 
         this.id = this.id || util.uuid();
     }
 
