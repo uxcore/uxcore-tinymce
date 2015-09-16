@@ -4,8 +4,9 @@
 
 ## TL;DR
 
-uxcore-tinymce ui component for react, inspired by react-tinymce
-need ipmort tinymce first, the component will look for the variable `tinymce` in global. 
+uxcore-tinymce ui component for react, inspired by react-tinymce  
+need ipmort tinymce first, the component will look for the variable `tinymce` in global.  
+tinymce website: http://www.tinymce.com/wiki.php/Configuration
 
 #### setup develop environment
 
