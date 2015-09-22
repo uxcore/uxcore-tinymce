@@ -88,12 +88,12 @@ class Tinymce extends React.Component {
         }
         tinymce.init(config);
         React.findDOMNode(me).style.hidden = "";
-        me._init = true;
+        me._isInit = true;
     }
 
     _remove() {
         tinymce.EditorManager.execCommand("mceRemoveEditor", true, this.id);
-        this._init = false;
+        this._isInit = false;
     }
 
     render() {
