@@ -30,8 +30,10 @@ class Demo extends React.Component {
         let me = this;
         return (
             <div>
-                <Tinymce onKeyup={me.handleKeyUp.bind(me)}
-                         onChange={me.handleChange.bind(me)}/>
+                <Tinymce
+                    onKeyup={me.handleKeyUp.bind(me)}
+                    onChange={me.handleChange.bind(me)}
+                />
             </div>
         );
     }

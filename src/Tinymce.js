@@ -7,7 +7,9 @@
  * All rights reserved.
  */
 
-let util = require('./util');
+import util from './util';
+import EditorConfig from './editorConfig';
+import assign from 'object-assign';
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
 const EVENTS = [
@@ -42,7 +44,7 @@ class Tinymce extends React.Component {
     componentWillMount() {
         if (typeof tinymce !== 'object') {
             console.warn("TinyMCE is not found in global, init failed");
-        } 
+        }
         this.id = this.id || util.uuid();
     }
 
@@ -64,15 +66,17 @@ class Tinymce extends React.Component {
             me._remove();
         }
         // hide the textarea until init finished
-        React.findDOMNode(me).style.hidden = "hidden";
+        React.findDOMNode(me).style.visibility = 'hidden';
         config.selector = '#' + me.id;
+        config = assign(config, EditorConfig);
+        console.log(config);
         if (!config.language) {
-            config.language = "zh_CN"
+            config.language = 'zh_CN';
         }
         config.setup = (editor) => {
             EVENTS.forEach((event, index) => {
                 let handler = me.props[HANDLER_NAMES[index]];
-                if (typeof handler != 'function') return;
+                if (typeof handler !== 'function') return;
                 editor.on(event, (e) => {
                     // native DOM events don't have access to the editor so we pass it here
                     handler(e, editor);
@@ -85,9 +89,9 @@ class Tinymce extends React.Component {
                     editor.setContent(content);
                 });
             }
-        }
+        };
         tinymce.init(config);
-        React.findDOMNode(me).style.hidden = "";
+        React.findDOMNode(me).style.visibility = "";
         me._isInit = true;
     }
 
@@ -106,19 +110,19 @@ class Tinymce extends React.Component {
 Tinymce.defaultProps = {
     config: {},
     content: ''
-}
+};
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Tinymce.propTypes = {
     config: React.PropTypes.object,
-    content: React.PropTypes.string,
+    content: React.PropTypes.string
 };
 
 //add handler propTypes
 HANDLER_NAMES.forEach((name) => {
     Tinymce.propTypes[name] = React.PropTypes.func;
-})
+});
 
 Tinymce.displayName = "Tinymce";
 
