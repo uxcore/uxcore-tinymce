@@ -68,8 +68,7 @@ class Tinymce extends React.Component {
         // hide the textarea until init finished
         React.findDOMNode(me).style.visibility = 'hidden';
         config.selector = '#' + me.id;
-        config = assign(config, EditorConfig);
-        console.log(config);
+        config = assign({}, EditorConfig, config);
         if (!config.language) {
             config.language = 'zh_CN';
         }
