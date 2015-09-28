@@ -75,18 +75,20 @@ Uploader.prototype.setup = function() {
 	this.input = input;
 
 	var $trigger = this.$trigger;
+	console.log($trigger)
 	input.setAttribute('hidefocus', true);
 	var height = $trigger.offsetHeight;
 	input.style.cssText = 'position: absolute; top: 0; right: 0; opacity: 0; outline: 0; cursor: pointer; height: ' + height + '; fontSize: ' + Math.max(64, height * 5);
 	this.form.appendChild(input);
 	var formStyle = '';
+	var triggerRect = $trigger.getBoundingClientRect();
 	var formCss = {
 		position: 'absolute',
-		top: $trigger.offsetTop + 'px',
-		left: $trigger.offsetLeft + 'px',
+		top: triggerRect.top + 'px',
+		left: triggerRect.left + 'px',
 		overflow: 'hidden',
-		width: $trigger.offsetWidth + 'px',
-		height: $trigger.offsetHeight + 'px',
+		width: triggerRect.width + 'px',
+		height: triggerRect.height + 'px',
 		zIndex: 110
 	};
 	Object.keys(formCss).forEach(function(prop){
