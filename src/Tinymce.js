@@ -7,9 +7,9 @@
  * All rights reserved.
  */
 
-import util from './util';
-import EditorConfig from './editorConfig';
-import assign from 'object-assign';
+let util = require('./util');
+let EditorConfig = require('./editorConfig');
+let assign = require('object-assign');
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
 const EVENTS = [
@@ -57,7 +57,16 @@ class Tinymce extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      this._init(nextProps.config, nextProps.content);
+        if (!util.isEqual(nextProps.config, this.props.config)) {
+            this._init(nextProps.config, nextProps.content);
+        }
+    }
+
+    shouldComponentUpdate() {
+        return (
+            !util.isEqual(this.props.content, nextProps.content) ||
+            !util.isEqual(this.props.config, nextProps.config)
+        );
     }
 
     _init(config, content) {

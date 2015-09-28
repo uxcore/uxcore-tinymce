@@ -6,5 +6,8 @@ module.exports = {
     },
     uuid: () => {
         return 'uxcore-tinymce-' + count++;
+    },
+    isEqual: (a, b) => {
+        return JSON.stringify(a) == JSON.stringify(b);
     }
 }
