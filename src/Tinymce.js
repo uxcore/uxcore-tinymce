@@ -62,11 +62,15 @@ class Tinymce extends React.Component {
         }
     }
 
-    shouldComponentUpdate() {
+    shouldComponentUpdate(nextProps) {
         return (
             !util.isEqual(this.props.content, nextProps.content) ||
             !util.isEqual(this.props.config, nextProps.config)
         );
+    }
+
+    resetValue(value) {
+        tinymce.get(this.id).setContent(value)
     }
 
     _init(config, content) {
