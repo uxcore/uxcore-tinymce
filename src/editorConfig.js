@@ -26,7 +26,7 @@ export default {
     link_title: true, // link plugins enable title edit
     plugins: plugins,
     cssFiles: [ 'styles/skin.css', 'styles/skin-ext.css' ],
-    toolbar1: 'preview undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | link | emoticons image upload',
+    toolbar1: 'preview undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | link | emoticons upload',
     toolbar2: 'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table hr inserttime',
 	uploadConfig: {
 	    "inputName": "imageUploadInput",
