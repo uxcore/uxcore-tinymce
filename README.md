@@ -39,12 +39,16 @@ render() {
 }
 ```
 
-### demo
-http://uxcore.github.io/uxcore/components/uxcore-tinymce/
+## demo
+http://uxcore.github.io/uxcore/
 
-### API
+## API
 
-### props
+* resetValue(value)：重置 tinymce 的值。
+参数：
+    * value `string`：想要重置的值，支持富文本。
+
+## props
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
@@ -52,7 +56,7 @@ http://uxcore.github.io/uxcore/components/uxcore-tinymce/
 |content|string|optional|""|输入框中的默认值|
 |onXXX|function|optional|-|tinyMCE 所有在 setup 中绑定的事件可以使用此属性来完成。如 onChange、onKeyup 等，会传入两个参数：e 和 editor 实例。|
 
-### Events 包括
+## Events 包括
 
 ```javascript
 // Include all of the Native DOM and custom events from:
@@ -74,7 +78,7 @@ const EVENTS = [
 ```
 > 事件的具体含义和触发机制参考：`https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12`
 
-### FAQ
+## FAQ
 
 * Q1: 如何能够准确地监听输入框的变化？
   A1: 建议同时监听 onChange 和 onKeyup 事件，更复杂的讨论见：https://github.com/uxcore/uxcore-tinymce/issues/1
