@@ -1,3 +1,7 @@
+## 0.1.4
+
+`CHANGED` update react dependencies to 0.14
+
 ## 0.1.3
 
 `FIXED` fix the image upload trigger position bug

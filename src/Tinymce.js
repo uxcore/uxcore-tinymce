@@ -79,7 +79,7 @@ class Tinymce extends React.Component {
             me._remove();
         }
         // hide the textarea until init finished
-        React.findDOMNode(me).style.visibility = 'hidden';
+        ReactDOM.findDOMNode(me).style.visibility = 'hidden';
         config.selector = '#' + me.id;
         config = assign({}, EditorConfig, config);
         if (!config.language) {
@@ -103,7 +103,7 @@ class Tinymce extends React.Component {
             }
         };
         tinymce.init(config);
-        React.findDOMNode(me).style.visibility = "";
+        ReactDOM.findDOMNode(me).style.visibility = "";
         me._isInit = true;
     }
 
