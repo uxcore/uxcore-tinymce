@@ -8,7 +8,7 @@ let plugins = [
 	'table',
 	'paste',
 	'preview',
-	'wordcount',
+	// 'wordcount',
 	'image',
 	'upload'
 ];
@@ -16,6 +16,12 @@ let plugins = [
 export default {
 	theme: 'modern',
     height: 400,
+    external_plugins: {
+        'emoticons': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5//plugins/emoticons/plugin.min.js',
+        'upload': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5//plugins/upload/plugin.min.js',
+        'textcolor': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5//plugins/textcolor/plugin.min.js',
+        'hr': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5//plugins/hr/plugin.min.js'
+    },
     resize: true, // 是否可以鼠标拖动编辑器改变大小
     border_width: 1, // 编辑器的边框宽度
     convert_urls: false, // 当你insertContent的时候，取消一些节点src的转换
