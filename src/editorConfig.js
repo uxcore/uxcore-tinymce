@@ -37,5 +37,6 @@ export default {
 	    "progressCallback": function(){
 	        console.log('progressCallback', arguments);
 	    }
-	}
+	},
+	wordcount_countregex: /[^\x00-\xff]+/g
 };

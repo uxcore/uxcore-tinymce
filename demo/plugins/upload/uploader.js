@@ -75,20 +75,23 @@ Uploader.prototype.setup = function() {
 	this.input = input;
 
 	var $trigger = this.$trigger;
-	console.log($trigger)
+
 	input.setAttribute('hidefocus', true);
 	var height = $trigger.offsetHeight;
-	input.style.cssText = 'position: absolute; top: 0; right: 0; opacity: 0; outline: 0; cursor: pointer; height: ' + height + '; fontSize: ' + Math.max(64, height * 5);
+	input.style.cssText = 'position: absolute; top: 0; right: 0; opacity: 0; outline: 0; filter:alpha(opacity=0);cursor: pointer; height: ' + height + '; fontSize: ' + Math.max(64, height * 5);
 	this.form.appendChild(input);
 	var formStyle = '';
 	var triggerRect = $trigger.getBoundingClientRect();
+	var scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+	var w = triggerRect.width || $trigger.clientWidth;
+	var h = triggerRect.height || $trigger.clientHeight;
 	var formCss = {
 		position: 'absolute',
-		top: triggerRect.top + 'px',
+		top: (triggerRect.top + scrollY) + 'px',
 		left: triggerRect.left + 'px',
 		overflow: 'hidden',
-		width: triggerRect.width + 'px',
-		height: triggerRect.height + 'px',
+		width: w + 'px',
+		height: h + 'px',
 		zIndex: 110
 	};
 	Object.keys(formCss).forEach(function(prop){
@@ -104,10 +107,10 @@ Uploader.prototype.bind = function() {
 	var self = this;
 	var $trigger = this.$trigger;
 	$trigger.onmouseenter = function() {
-		self.form.style.top = $trigger.offsetTop;
-		self.form.style.left = $trigger.offsetLeft;
-		self.form.style.width = $trigger.offsetWidth;
-		self.form.style.height = $trigger.offsetHeight;
+		// self.form.style.top = $trigger.offsetTop;
+		// self.form.style.left = $trigger.offsetLeft;
+		// self.form.style.width = $trigger.offsetWidth;
+		// self.form.style.height = $trigger.offsetHeight;
 	};
 	self.bindInput();
 };
