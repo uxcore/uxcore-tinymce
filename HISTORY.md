@@ -1,3 +1,7 @@
+## 0.1.5
+
+`FIXED` fix ie8 bug in document_url
+
 ## 0.1.4
 
 `CHANGED` update react dependencies to 0.14
