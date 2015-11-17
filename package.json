@@ -1,6 +1,6 @@
 {
   "name": "uxcore-tinymce",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "uxcore-tinymce component for uxcore.",
   "repository": "https://github.com/uxcore/uxcore-tinymce.git",
   "author": "eternalsky",
