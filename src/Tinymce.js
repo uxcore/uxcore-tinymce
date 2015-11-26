@@ -102,7 +102,7 @@ class Tinymce extends React.Component {
                 });
             }
         };
-        tinymce.baseURL = '//g-assets.daily.taobao.net/uxcore/uxcore-lib/tinymce/4.2.5/'
+        tinymce.baseURL = '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/'
         tinymce.init(config);
         ReactDOM.findDOMNode(me).style.visibility = "";
         me._isInit = true;

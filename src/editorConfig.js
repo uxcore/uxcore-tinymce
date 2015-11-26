@@ -17,10 +17,10 @@ export default {
 	theme: 'modern',
     height: 400,
     external_plugins: {
-        'emoticons': '//g-assets.daily.taobao.net/uxcore/uxcore-lib/tinymce/4.2.5//plugins/emoticons/plugin.min.js',
-        'upload': '//g-assets.daily.taobao.net/uxcore/uxcore-lib/tinymce/4.2.5//plugins/upload/plugin.min.js',
-        'textcolor': '//g-assets.daily.taobao.net/uxcore/uxcore-lib/tinymce/4.2.5//plugins/textcolor/plugin.min.js',
-        'hr': '//g-assets.daily.taobao.net/uxcore/uxcore-lib/tinymce/4.2.5//plugins/hr/plugin.min.js'
+        'emoticons': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/emoticons/plugin.min.js',
+        'upload': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
+        'textcolor': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/textcolor/plugin.min.js',
+        'hr': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/hr/plugin.min.js'
     },
     resize: true, // 是否可以鼠标拖动编辑器改变大小
     border_width: 1, // 编辑器的边框宽度
