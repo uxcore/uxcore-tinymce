@@ -1,3 +1,7 @@
+## 0.1.9
+
+`NEW` add new prop `placeholder`
+
 ## 0.1.8
 
 `CHANGED` update scaffold

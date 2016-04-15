@@ -117,14 +117,13 @@ class Tinymce extends React.Component {
 
     render() {
         return (
-            <textarea id={this.id} defaultValue={this.props.content}></textarea>
+            <textarea id={this.id} defaultValue={this.props.content} placeholder={this.props.placeholder}></textarea>
         );
     }
 }
 
 Tinymce.defaultProps = {
-    config: {},
-    content: ''
+    config: {}
 };
 
 

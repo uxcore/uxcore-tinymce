@@ -32,7 +32,8 @@ class Demo extends React.Component {
             <div>
                 <Tinymce
                     onKeyup={me.handleKeyUp.bind(me)}
-                    onChange={me.handleChange.bind(me)}/>
+                    onChange={me.handleChange.bind(me)}
+                    placeholder={'placeholder'}/>
             </div>
         );
     }
