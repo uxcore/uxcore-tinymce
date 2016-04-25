@@ -57,6 +57,28 @@ http://uxcore.github.io/uxcore/
 |placeholder|string|optional|-|占位符|
 |onXXX|function|optional|-|tinyMCE 所有在 setup 中绑定的事件可以使用此属性来完成。如 onChange、onKeyup 等，会传入两个参数：e 和 editor 实例。|
 
+### 图片上传配置
+```js
+uploadConfig: {
+    "inputName": "imageUploadInput",//上传的file input的name属性，默认file
+    "actionUrl": "http://example.com/upload.json",//数据提交后端处理接口，需要返回JSON格式数据
+    "formatResult": function(response){ //数据返回结构化，optional，供老接口兼容使用，return的Object是plugin预期的结构
+        return {
+            content: {
+                "name": response.result.name,
+                "downloarUrl": response.result.url
+            }
+        };
+    },
+    "errorCallback": function(){ //自定义的错误回调，optional，不设置会直接alert错误
+        console.log('errorCallback', arguments);
+    },
+    "progressCallback": function(){ //自定义的上传进度回调，optional，不设置不显示进度
+        console.log('progressCallback', arguments);
+    }
+}
+```
+
 ## Events 包括
 
 ```javascript
