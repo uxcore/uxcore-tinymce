@@ -1,3 +1,6 @@
+## 0.1.10
+`NEW` add new plugin `variable`
+
 ## 0.1.9
 
 `NEW` add new prop `placeholder`

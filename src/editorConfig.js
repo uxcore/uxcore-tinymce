@@ -11,7 +11,9 @@ let plugins = [
 	'wordcount',
 	'image',
 	'upload',
-    'placeholder'
+    'placeholder',
+    'variable',
+    'noneditable'
 ];
 
 export default {
@@ -22,7 +24,8 @@ export default {
         'upload': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
         'textcolor': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/textcolor/plugin.min.js',
         'hr': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/hr/plugin.min.js',
-        'placeholder': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/placeholder/plugin.min.js'
+        'placeholder': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/placeholder/plugin.min.js',
+        'variable': '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/variable/plugin.min.js'
     },
     resize: true, // 是否可以鼠标拖动编辑器改变大小
     border_width: 1, // 编辑器的边框宽度
