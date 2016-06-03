@@ -1,16 +1,8 @@
 let plugins = [
-	'lists',
-	'hr',
-	'emoticons',
-	'textcolor',
-	'insertdatetime',
-	'link',
-	'table',
-	'paste',
-	'preview',
-	'wordcount',
-	'image',
-	'upload',
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table contextmenu paste code',
+    'upload',
     'placeholder',
     'variable',
     'noneditable'
@@ -36,7 +28,9 @@ export default {
     show_system_default_font: true, // 是否开启系统字体的探测。
     link_title: true, // link plugins enable title edit
     plugins: plugins,
-    cssFiles: [ 'styles/skin.css', 'styles/skin-ext.css' ],
+    content_css: [
+        '//g.alicdn.com/platform/c/tinymce/4.3.12/custom_content.css'
+    ],
     toolbar1: 'preview undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | link | emoticons upload',
     toolbar2: 'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table hr inserttime',
 	uploadConfig: {

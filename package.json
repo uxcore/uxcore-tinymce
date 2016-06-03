@@ -1,12 +1,18 @@
 {
  "name": "uxcore-tinymce",
- "version": "0.1.11",
+ "version": "0.2.0",
  "description": "uxcore-tinymce component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-tinymce.git",
  "author": "eternalsky",
  "main": "build/index.js",
  "scripts": {
-  "dev": "gulp server"
+  "start": "uxcore-tools run start",
+  "server": "uxcore-tools run server",
+  "build": "uxcore-tools run build",
+  "test": "uxcore-tools run test",
+  "coverage": "uxcore-tools run coverage",
+  "pub": "uxcore-tools run pub",
+  "dep": "npm install -d console-polyfill@^0.2.2 es5-shim@^4.5.8 react@15.x react-dom@15.x uxcore-kuma@2.x kuma-base@1.x"
  },
  "bugs": {
   "url": "http://github.com/uxcore/uxcore-tinymce/issues"
@@ -18,31 +24,13 @@
   "Tinymce"
  ],
  "devDependencies": {
-  "babel-core": "~6.4.0",
-  "babel-loader": "~6.2.1",
-  "babel-plugin-add-module-exports": "~0.1.2",
-  "babel-preset-es2015-loose": "~7.0.0",
-  "babel-preset-react": "~6.3.13",
-  "babel-preset-stage-1": "~6.3.13",
-  "browser-sync": "~2.11.0",
-  "colors": "^1.1.2",
-  "console-polyfill": "~0.2.1",
-  "cross-spawn": "^2.1.5",
-  "es3ify-loader": "~0.1.0",
-  "es5-shim": "~4.1.10",
-  "gulp": "~3.9.0",
-  "gulp-babel": "~6.1.1",
-  "gulp-concat": "~2.6.0",
-  "gulp-es3ify": "0.0.0",
-  "gulp-just-replace": "~1.0.2",
-  "gulp-less": "~3.0.3",
-  "gulp-sourcemaps": "~1.5.2",
-  "html-wiring": "~1.2.0",
-  "inquirer": "^0.12.0",
-  "react": "~0.14.0",
-  "react-dom": "~0.14.0",
-  "uxcore-kuma": "~1.1.0",
-  "webpack": "^1.10.5"
+  "console-polyfill": "^0.2.2",
+  "es5-shim": "^4.5.8",
+  "kuma-base": "1.x",
+  "react": "15.x",
+  "react-dom": "15.x",
+  "uxcore-kuma": "2.x",
+  "uxcore-tools": "0.2.x"
  },
  "dependencies": {
   "classnames": "^2.1.2",

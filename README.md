@@ -14,7 +14,7 @@ tinymce website: http://www.tinymce.com/wiki.php/Configuration
 $ git clone https://github.com/uxcore/uxcore-tinymce
 $ cd uxcore-tinymce
 $ npm install
-$ gulp server
+$ npm run server
 ```
 
 ## Usage

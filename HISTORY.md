@@ -1,3 +1,7 @@
+## 0.2.0
+
+`CHANGED` support tinymce 4.3.12
+
 ## 0.1.11
 `FIX` remove import in src/less
 
