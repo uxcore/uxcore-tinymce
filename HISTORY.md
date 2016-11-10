@@ -1,3 +1,8 @@
+## 0.2.3
+
+`CHANGED` add plugin `colorpicker`
+`CHANGED` change default font_formats
+
 ## 0.2.0
 
 `CHANGED` support tinymce 4.3.12
