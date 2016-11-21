@@ -1,3 +1,7 @@
+## 0.2.4
+
+`FIXED` fail to reset content when props.content is changed
+
 ## 0.2.3
 
 `CHANGED` add plugin `colorpicker`

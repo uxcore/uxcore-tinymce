@@ -1,6 +1,6 @@
 {
  "name": "uxcore-tinymce",
- "version": "0.2.3",
+ "version": "0.2.4",
  "description": "uxcore-tinymce component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-tinymce.git",
  "author": "eternalsky",
@@ -37,6 +37,7 @@
   "react": "0.14.x",
   "react-addons-test-utils": "0.14.x",
   "react-dom": "0.14.x",
+  "uxcore-button": "^0.4.5",
   "uxcore-kuma": "2.x",
   "uxcore-tools": "0.2.x"
  },
