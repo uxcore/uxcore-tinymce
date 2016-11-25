@@ -77,7 +77,10 @@ class Tinymce extends React.Component {
   }
 
   resetValue(value) {
-    window.tinymce.get(this.id).setContent(value);
+    const editor = window.tinymce.get(this.id);
+    editor.setContent(value);
+    editor.selection.select(editor.getBody(), true);
+    editor.selection.collapse(false);
   }
 
   init(config, content) {

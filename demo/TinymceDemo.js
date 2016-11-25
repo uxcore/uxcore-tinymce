@@ -24,10 +24,16 @@ class Demo extends React.Component {
 
   handleKeyUp(e, editor) {
     console.log(editor.getContent());
+    this.setState({
+      content: editor.getContent(),
+    });
   }
 
   handleChange(e, editor) {
     console.log(editor.getContent());
+    this.setState({
+      content: editor.getContent(),
+    });
   }
 
   handleContentChange() {
