@@ -1,3 +1,8 @@
+## 0.2.5
+
+`FIXED` resetValue may cause error if editor has not been inited
+`CHANGED` add new prop `changeDelay`
+
 ## 0.2.4
 
 `FIXED` fail to reset content when props.content is changed

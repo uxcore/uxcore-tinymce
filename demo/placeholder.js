@@ -11,12 +11,12 @@ tinymce.PluginManager.add('placeholder', function(editor) {
         editor.on('keyup', onBlur);
         editor.on('setContent', onBlur);
 
-        function onFocus(){
+        function onFocus() {
             label.hide();
-            tinymce.execCommand('mceFocus', false, editor);
+            editor.focus();
         }
 
-        function onBlur(){
+        function onBlur() {
             var emptyContent = '<div>&nbsp;</div>';
             if(editor.getContent() == emptyContent) {
                 label.show();
@@ -26,7 +26,7 @@ tinymce.PluginManager.add('placeholder', function(editor) {
         }
     });
 
-    var Label = function(){
+    var Label = function() {
         // Create label el
         this.text = editor.getElement().getAttribute("placeholder");
         this.contentAreaContainer = editor.getContentAreaContainer();

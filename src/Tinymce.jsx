@@ -54,7 +54,11 @@ class Tinymce extends React.Component {
       this.init(nextProps.config, nextProps.content);
     }
     if (nextProps.content !== this.props.content && window.tinymce) {
-      this.resetValue(nextProps.content);
+      if (this.isInited) {
+        this.resetValue(nextProps.content);
+      } else {
+        this.contentToBeSet = nextProps.content;
+      }
     }
   }
 
@@ -77,15 +81,21 @@ class Tinymce extends React.Component {
   }
 
   resetValue(value) {
-    const editor = window.tinymce.get(this.id);
-    editor.setContent(value);
-    editor.selection.select(editor.getBody(), true);
-    editor.selection.collapse(false);
+    const me = this;
+    if (this.setValueTimer) {
+      clearTimeout(this.setValueTimer);
+    }
+    this.setValueTimer = setTimeout(() => {
+      const editor = window.tinymce.get(me.id);
+      editor.setContent(value);
+      editor.selection.select(editor.getBody(), true);
+      editor.selection.collapse(false);
+    }, me.props.changeDelay);
   }
 
   init(config, content) {
     const me = this;
-    if (me.isInit) {
+    if (me.isInited) {
       me.remove();
     }
     // hide the textarea until init finished
@@ -106,21 +116,23 @@ class Tinymce extends React.Component {
       });
       // need to set content here because the textarea will still have the
       // old `this.props.content`
-      if (content) {
-        editor.on('init', () => {
+      editor.on('init', () => {
+        me.isInited = true;
+        if (me.contentToBeSet) {
+          editor.setContent(me.contentToBeSet);
+        } else if (content) {
           editor.setContent(content);
-        });
-      }
+        }
+      });
     };
     window.tinymce.baseURL = '//g.alicdn.com/platform/c/tinymce/4.3.12';
     window.tinymce.init(trueConfig);
     me.root.style.visibility = '';
-    me.isInit = true;
   }
 
   remove() {
     window.tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
-    this.isInit = false;
+    this.isInited = false;
   }
 
   render() {
@@ -132,6 +144,7 @@ class Tinymce extends React.Component {
 
 Tinymce.defaultProps = {
   config: {},
+  changeDelay: 500,
 };
 
 
@@ -140,6 +153,7 @@ Tinymce.propTypes = {
   config: React.PropTypes.object,
   placeholder: React.PropTypes.string,
   content: React.PropTypes.string,
+  changeDelay: React.PropTypes.number,
 };
 
 // add handler propTypes

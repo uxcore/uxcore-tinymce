@@ -55,6 +55,7 @@ http://uxcore.github.io/uxcore/
 |config|object|optional|{}|tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成|
 |content|string|optional|""|输入框中的默认值|
 |placeholder|string|optional|-|占位符|
+|changeDelay|string|optional|500|单位 ms，性能参数，多少毫秒后同步从外面传来的 content 的变化|
 |onXXX|function|optional|-|tinyMCE 所有在 setup 中绑定的事件可以使用此属性来完成。如 onChange、onKeyup 等，会传入两个参数：e 和 editor 实例。|
 
 ### 图片上传配置
