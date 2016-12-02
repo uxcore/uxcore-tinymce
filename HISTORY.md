@@ -1,3 +1,7 @@
+## 0.2.7
+
+`FIXED` Sougou Input fail to work
+
 ## 0.2.5
 
 `FIXED` resetValue may cause error if editor has not been inited

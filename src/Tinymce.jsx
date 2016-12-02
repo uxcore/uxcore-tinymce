@@ -55,7 +55,7 @@ class Tinymce extends React.Component {
     }
     if (nextProps.content !== this.props.content && window.tinymce) {
       if (this.isInited) {
-        this.resetValue(nextProps.content);
+        // this.resetValue(nextProps.content);
       } else {
         this.contentToBeSet = nextProps.content;
       }
