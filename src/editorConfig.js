@@ -64,12 +64,12 @@ export default {
   height: 400,
   font_formats: fonts.join(''),
   external_plugins: {
-    emoticons: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/emoticons/plugin.min.js',
-    upload: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
-    textcolor: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/textcolor/plugin.min.js',
-    hr: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/hr/plugin.min.js',
-    placeholder: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/placeholder/plugin.min.js',
-    variable: '//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/variable/plugin.min.js',
+    emoticons: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/emoticons/plugin.min.js',
+    upload: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
+    textcolor: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/textcolor/plugin.min.js',
+    hr: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/hr/plugin.min.js',
+    placeholder: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/placeholder/plugin.min.js',
+    variable: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/variable/plugin.min.js',
   },
   resize: true, // 是否可以鼠标拖动编辑器改变大小
   border_width: 1, // 编辑器的边框宽度
@@ -81,7 +81,7 @@ export default {
   link_title: true, // link plugins enable title edit
   plugins,
   content_css: [
-    '//g.alicdn.com/platform/c/tinymce/4.3.12/custom_content.css',
+    'https://g.alicdn.com/platform/c/tinymce/4.3.12/custom_content.css',
   ],
   toolbar1: 'preview undo redo | fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | link | emoticons upload',
   toolbar2: 'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table hr inserttime',

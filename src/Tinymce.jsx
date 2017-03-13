@@ -125,7 +125,7 @@ class Tinymce extends React.Component {
         }
       });
     };
-    window.tinymce.baseURL = '//g.alicdn.com/platform/c/tinymce/4.3.12';
+    window.tinymce.baseURL = 'https://g.alicdn.com/platform/c/tinymce/4.3.12';
     window.tinymce.init(trueConfig);
     me.root.style.visibility = '';
   }

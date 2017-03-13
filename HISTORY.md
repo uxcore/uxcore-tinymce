@@ -1,3 +1,7 @@
+## 0.2.8
+
+`FIXED` change default tinymce url to https
+ 
 ## 0.2.7
 
 `FIXED` Sougou Input fail to work
