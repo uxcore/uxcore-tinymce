@@ -56,6 +56,7 @@ class Demo extends React.Component {
         <Tinymce
           onKeyup={me.handleKeyUp.bind(me)}
           onChange={me.handleChange.bind(me)}
+          placeholder="不是 placeholder"
           config={{
             menubar: false,
             toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | variable',

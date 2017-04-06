@@ -18,7 +18,7 @@ tinymce.PluginManager.add('placeholder', function(editor) {
 
         function onBlur() {
             var emptyContent = '<div>&nbsp;</div>';
-            if(editor.getContent() == emptyContent) {
+            if(editor.getContent() === emptyContent) {
                 label.show();
             }else{
                 label.hide();
@@ -33,8 +33,10 @@ tinymce.PluginManager.add('placeholder', function(editor) {
 
         tinymce.DOM.setStyle(this.contentAreaContainer, 'position', 'relative');
 
-        attrs = {id: 'tinymce-placeholder', style: {position: 'absolute', top:'7px', left:0, color: '#888', paddingLeft: '9px', width:'98%', overflow: 'hidden'} };
-        var labelEl = tinymce.DOM.$.find('#tinymce-placeholder');
+        this.id = 'tinymce-placeholder-' + editor.id;
+
+        attrs = {id: this.id, style: {position: 'absolute', top:'7px', left:0, color: '#888', paddingLeft: '9px', width:'98%', overflow: 'hidden'} };
+        var labelEl = tinymce.DOM.$.find('#' + this.id);
         this.el = labelEl.length ? labelEl[0] : tinymce.DOM.add( this.contentAreaContainer, "label", attrs, this.text );
     }
 

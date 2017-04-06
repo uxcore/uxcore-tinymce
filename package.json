@@ -38,7 +38,7 @@
   "react-addons-test-utils": "0.14.x",
   "react-dom": "0.14.x",
   "uxcore-button": "^0.4.5",
-  "uxcore-kuma": "2.x",
+  "uxcore-kuma": "*",
   "uxcore-tools": "0.2.x"
  },
  "dependencies": {
