@@ -1,3 +1,7 @@
+## 0.2.9
+
+`FIXED` resetValue may be called when tinymce is not inited.
+
 ## 0.2.8
 
 `FIXED` change default tinymce url to https

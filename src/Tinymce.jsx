@@ -86,11 +86,20 @@ class Tinymce extends React.Component {
       clearTimeout(this.setValueTimer);
     }
     this.setValueTimer = setTimeout(() => {
-      const editor = window.tinymce.get(me.id);
-      editor.setContent(value);
-      editor.selection.select(editor.getBody(), true);
-      editor.selection.collapse(false);
+      if (me.isInited) {
+        me.setTinymceContent(value);
+      } else {
+        me.contentToBeSet = value;
+      }
     }, me.props.changeDelay);
+  }
+
+  setTinymceContent(value) {
+    const me = this;
+    const editor = window.tinymce.get(me.id);
+    editor.setContent(value);
+    editor.selection.select(editor.getBody(), true);
+    editor.selection.collapse(false);
   }
 
   init(config, content) {
