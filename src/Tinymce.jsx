@@ -7,11 +7,11 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const assign = require('object-assign');
-
-const util = require('./util');
-const EditorConfig = require('./editorConfig');
+import React from 'react';
+import assign from 'object-assign';
+import util from './util';
+import EditorConfig from './editorConfig';
+import PropTypes from 'prop-types';
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
 const EVENTS = [
@@ -73,6 +73,14 @@ class Tinymce extends React.Component {
     this.remove();
   }
 
+  setTinymceContent(value) {
+    const me = this;
+    const editor = window.tinymce.get(me.id);
+    editor.setContent(value);
+    editor.selection.select(editor.getBody(), true);
+    editor.selection.collapse(false);
+  }
+
   saveRef(refName) {
     const me = this;
     return (c) => {
@@ -92,14 +100,6 @@ class Tinymce extends React.Component {
         me.contentToBeSet = value;
       }
     }, me.props.changeDelay);
-  }
-
-  setTinymceContent(value) {
-    const me = this;
-    const editor = window.tinymce.get(me.id);
-    editor.setContent(value);
-    editor.selection.select(editor.getBody(), true);
-    editor.selection.collapse(false);
   }
 
   init(config, content) {
@@ -146,7 +146,11 @@ class Tinymce extends React.Component {
 
   render() {
     return (
-      <textarea ref={this.saveRef('root')} id={this.id} defaultValue={this.props.content} placeholder={this.props.placeholder} />
+      <textarea
+        ref={this.saveRef('root')}
+        id={this.id} defaultValue={this.props.content}
+        placeholder={this.props.placeholder}
+      />
     );
   }
 }
@@ -159,17 +163,17 @@ Tinymce.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Tinymce.propTypes = {
-  config: React.PropTypes.object,
-  placeholder: React.PropTypes.string,
-  content: React.PropTypes.string,
-  changeDelay: React.PropTypes.number,
+  config: PropTypes.object,
+  placeholder: PropTypes.string,
+  content: PropTypes.string,
+  changeDelay: PropTypes.number,
 };
 
 // add handler propTypes
 HANDLER_NAMES.forEach((name) => {
-  Tinymce.propTypes[name] = React.PropTypes.func;
+  Tinymce.propTypes[name] = PropTypes.func;
 });
 
 Tinymce.displayName = 'Tinymce';
 
-module.exports = Tinymce;
+export default Tinymce;
