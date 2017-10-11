@@ -1,14 +1,14 @@
-tinymce.PluginManager.add('placeholder', (editor) => {
-  const Label = function () {
+tinymce.PluginManager.add('placeholder', function(editor) {
+  var Label = function () {
         // Create label el
     this.text = editor.getElement().getAttribute('placeholder');
     this.contentAreaContainer = editor.getContentAreaContainer();
 
     tinymce.DOM.setStyle(this.contentAreaContainer, 'position', 'relative');
 
-    this.id = `tinymce-placeholder-${editor.id}`;
+    this.id = 'tinymce-placeholder-' + editor.id;
 
-    const attrs = {
+    var attrs = {
       id: this.id,
       style: {
         position: 'absolute',
@@ -20,7 +20,7 @@ tinymce.PluginManager.add('placeholder', (editor) => {
         overflow: 'hidden',
       },
     };
-    const labelEl = tinymce.DOM.$.find(`# ${this.id}`);
+    var labelEl = tinymce.DOM.$.find('#' + this.id);
     this.el = labelEl.length ?
      labelEl[0] :
      tinymce.DOM.add(this.contentAreaContainer, 'label', attrs, this.text);
@@ -34,8 +34,8 @@ tinymce.PluginManager.add('placeholder', (editor) => {
     tinymce.DOM.setStyle(this.el, 'display', '');
   };
 
-  editor.on('init', () => {
-    const label = new Label;
+  editor.on('init', function() {
+    var label = new Label;
 
     function onFocus() {
       label.hide();
@@ -43,7 +43,7 @@ tinymce.PluginManager.add('placeholder', (editor) => {
     }
 
     function onBlur() {
-      const emptyContent = '<div>&nbsp;</div>';
+      var emptyContent = '<div>&nbsp;</div>';
       if (editor.getContent() === emptyContent) {
         label.show();
       } else {
