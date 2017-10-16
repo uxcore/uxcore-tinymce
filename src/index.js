@@ -5,5 +5,6 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
+import Tinymce from './Tinymce';
 
-module.exports = require('./Tinymce');
+export default Tinymce;

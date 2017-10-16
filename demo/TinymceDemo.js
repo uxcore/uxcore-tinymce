@@ -6,10 +6,10 @@
  * All rights reserved.
  */
 
-const Button = require('uxcore-button');
-const React = require('react');
+import Button from 'uxcore-button';
 
-const Tinymce = require('../src');
+import React from 'react';
+import Tinymce from '../src';
 
 
 class Demo extends React.Component {
@@ -78,4 +78,4 @@ class Demo extends React.Component {
   }
 }
 
-module.exports = Demo;
+export default Demo;
