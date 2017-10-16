@@ -1,3 +1,8 @@
+
+## 0.2.10
+
+`CHANGED` fit React@15
+
 ## 0.2.9
 
 `FIXED` resetValue may be called when tinymce is not inited.
