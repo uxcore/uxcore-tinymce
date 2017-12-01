@@ -36,7 +36,6 @@ const HANDLER_NAMES = EVENTS.map(event => `on${util.uc_first(event)}`);
 
 
 class Tinymce extends React.Component {
-
   componentWillMount() {
     if (typeof window.tinymce !== 'object') {
       console.warn('TinyMCE is not found in global, init failed');
