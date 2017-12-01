@@ -18,6 +18,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       content: 'default content',
+      show: true,
     };
     this.handleContentChange = this.handleContentChange.bind(this);
   }
@@ -37,22 +38,28 @@ class Demo extends React.Component {
   }
 
   handleContentChange() {
-    this.setState({
-      content: 'content has been changed',
-    });
+    this.mce1.setTinymceContent('content has been changed');
   }
 
   render() {
     const me = this;
     return (
       <div>
-        <Tinymce
+        {this.state.show ? <Tinymce
+          ref={(c) => { this.mce1 = c; }}
           onKeyup={me.handleKeyUp.bind(me)}
           onChange={me.handleChange.bind(me)}
           content={me.state.content}
           placeholder={'placeholder'}
-        />
+        /> : null}
         <Button onClick={this.handleContentChange}>修改默认值</Button>
+        <Button
+          onClick={() => {
+            this.setState({
+              show: !this.state.show,
+            });
+          }}
+        >移除/重载</Button>
         <Tinymce
           onKeyup={me.handleKeyUp.bind(me)}
           onChange={me.handleChange.bind(me)}

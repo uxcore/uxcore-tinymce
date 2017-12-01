@@ -92,8 +92,6 @@ Uploader.prototype.setup = function() {
     this.form.appendChild(input);
     _positionForm();
     // doc.body.appendChild(this.form);
-    // console.log(this.$trigger.parentNode);
-    // this.$trigger.parentNode.appendChild(this.form);
     this.$mce.appendChild(this.form);
 
     $trigger.addEventListener('mouseenter', function() {
