@@ -65,8 +65,7 @@ export default {
   font_formats: fonts.join(''),
   external_plugins: {
     emoticons: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/emoticons/plugin.min.js',
-    // upload: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
-    upload: 'http://30.5.117.52:3000/demo/upload.js',
+    upload: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/upload/plugin.min.js',
     textcolor: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/textcolor/plugin.min.js',
     hr: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/hr/plugin.min.js',
     placeholder: 'https://g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/plugins/placeholder/plugin.min.js',
