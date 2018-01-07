@@ -59,7 +59,6 @@ describe('Tinymce', () => {
     expect(ReactDOM.findDOMNode(mceNode).innerHTML).to.be('设置了新的内容');
     done();
   });
-
   it('placeholder', done => {
     let Dome = createClass({
       
@@ -78,7 +77,6 @@ describe('Tinymce', () => {
     );
     done();
   });
-  
   it('setTinymceContent', done => {
     let initWillRun = false;
     let Dome = createClass({
@@ -107,8 +105,6 @@ describe('Tinymce', () => {
     const instance = ReactDOM.render(<Dome />, div);
     const mceNode = instance.refs.mce;
   });
-  
-  
   it('has tinymce', done => {
     let Dome = createClass({
       render() {
