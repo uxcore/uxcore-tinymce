@@ -12,6 +12,7 @@
     "build": "uxcore-tools run build",
     "test": "uxcore-tools run test",
     "coverage": "uxcore-tools run coverage",
+    "electron": "uxcore-tools run electron",
     "pub": "uxcore-tools run pub",
     "dep": "uxcore-tools run dep",
     "tnpm-dep": "uxcore-tools run tnpm-dep",
