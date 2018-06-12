@@ -19,8 +19,36 @@ class Demo extends React.Component {
     this.state = {
       content: 'default content',
       show: true,
+      config: {
+        menubar: false,
+        paste_remove_styles_if_webkit: false,
+        toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | upload',
+        toolbar2: '',
+        statusbar: false,
+        variable: {
+          items: [{
+            text: '工号',
+            id: 'gh',
+          }, {
+            text: '姓名',
+            id: 'xm',
+          }],
+        },
+      },
     };
     this.handleContentChange = this.handleContentChange.bind(this);
+
+    setTimeout(() => {
+      this.setState({
+        config: {
+          menubar: true,
+          paste_remove_styles_if_webkit: false,
+          toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | upload',
+          toolbar2: '',
+          statusbar: true,
+        },
+      });
+    }, 10000);
   }
 
   handleKeyUp(e, editor) {
@@ -64,22 +92,7 @@ class Demo extends React.Component {
           onKeyup={me.handleKeyUp.bind(me)}
           onChange={me.handleChange.bind(me)}
           placeholder="不是 placeholder"
-          config={{
-            menubar: false,
-            paste_remove_styles_if_webkit: false,
-            toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor | upload',
-            toolbar2: '',
-            statusbar: false,
-            variable: {
-              items: [{
-                text: '工号',
-                id: 'gh',
-              }, {
-                text: '姓名',
-                id: 'xm',
-              }],
-            },
-          }}
+          config={this.state.config}
         />
         <Button onClick={() => { this.setState({ visible: true }); }}>在 Dialog 中</Button>
         <Dialog visible={this.state.visible}>

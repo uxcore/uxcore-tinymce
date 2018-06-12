@@ -60,17 +60,16 @@ class Tinymce extends React.Component {
   componentWillUnmount() {
     this.remove();
   }
-
-  getDerivedStateFromProps(nextProps) {
-    if (!util.isEqual(nextProps.config, this.props.config)) {
-      this.init(nextProps.config, nextProps.content);
+  
+  componentDidUpdate(prevProps) {
+    const { config, content } = this.props;
+    if (!util.isEqual(config, prevProps.config)) {
+      this.init(config, content);
     }
-    if (nextProps.content !== this.props.content && window.tinymce) {
-      if (this.isInited) {
-        // this.resetValue(nextProps.content);
-      } else {
-        this.contentToBeSet = nextProps.content;
-      }
+    if (this.isInited) {
+      // this.resetValue(nextProps.content);
+    } else {
+      this.contentToBeSet = content;
     }
   }
 
