@@ -12,6 +12,8 @@ import assign from 'object-assign';
 import util from './util';
 import EditorConfig from './editorConfig';
 import PropTypes from 'prop-types';
+import { polyfill } from 'react-lifecycles-compat';
+
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
 const EVENTS = [
@@ -36,7 +38,8 @@ const HANDLER_NAMES = EVENTS.map(event => `on${util.uc_first(event)}`);
 
 
 class Tinymce extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     if (typeof window.tinymce !== 'object') {
       console.warn('TinyMCE is not found in global, init failed');
     }
@@ -45,20 +48,6 @@ class Tinymce extends React.Component {
 
   componentDidMount() {
     this.init(this.props.config);
-  }
-
-
-  componentWillReceiveProps(nextProps) {
-    if (!util.isEqual(nextProps.config, this.props.config)) {
-      this.init(nextProps.config, nextProps.content);
-    }
-    if (nextProps.content !== this.props.content && window.tinymce) {
-      if (this.isInited) {
-        // this.resetValue(nextProps.content);
-      } else {
-        this.contentToBeSet = nextProps.content;
-      }
-    }
   }
 
   shouldComponentUpdate(nextProps) {
@@ -71,6 +60,20 @@ class Tinymce extends React.Component {
   componentWillUnmount() {
     this.remove();
   }
+
+  getDerivedStateFromProps(nextProps) {
+    if (!util.isEqual(nextProps.config, this.props.config)) {
+      this.init(nextProps.config, nextProps.content);
+    }
+    if (nextProps.content !== this.props.content && window.tinymce) {
+      if (this.isInited) {
+        // this.resetValue(nextProps.content);
+      } else {
+        this.contentToBeSet = nextProps.content;
+      }
+    }
+  }
+
 
   setTinymceContent(value) {
     const me = this;
@@ -175,4 +178,4 @@ HANDLER_NAMES.forEach((name) => {
 
 Tinymce.displayName = 'Tinymce';
 
-export default Tinymce;
+export default polyfill(Tinymce);

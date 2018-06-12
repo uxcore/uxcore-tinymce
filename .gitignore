@@ -27,3 +27,5 @@ spm_modules
 dist
 build
 assets/**/*.css
+coverage
+package-lock.json
