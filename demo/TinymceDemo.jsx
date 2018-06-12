@@ -47,6 +47,7 @@ class Demo extends React.Component {
           toolbar2: '',
           statusbar: true,
         },
+        content: '1313131212',
       });
     }, 10000);
   }
@@ -93,6 +94,7 @@ class Demo extends React.Component {
           onChange={me.handleChange.bind(me)}
           placeholder="不是 placeholder"
           config={this.state.config}
+          content={this.state.content}
         />
         <Button onClick={() => { this.setState({ visible: true }); }}>在 Dialog 中</Button>
         <Dialog visible={this.state.visible}>
