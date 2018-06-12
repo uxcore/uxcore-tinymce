@@ -12,7 +12,6 @@ import assign from 'object-assign';
 import util from './util';
 import EditorConfig from './editorConfig';
 import PropTypes from 'prop-types';
-import { polyfill } from 'react-lifecycles-compat';
 
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
@@ -177,4 +176,4 @@ HANDLER_NAMES.forEach((name) => {
 
 Tinymce.displayName = 'Tinymce';
 
-export default polyfill(Tinymce);
+export default Tinymce;

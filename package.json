@@ -49,8 +49,7 @@
     "classnames": "^2.1.2",
     "deep-equal": "~1.0.1",
     "object-assign": "^4.0.0",
-    "prop-types": "15.x",
-    "react-lifecycles-compat": "^3.0.4"
+    "prop-types": "15.x"
   },
   "contributors": [],
   "license": "MIT"
