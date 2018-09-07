@@ -1,3 +1,5 @@
+## 0.2.11
+`CHANGED` support js style export
 
 ## 0.2.10
 
