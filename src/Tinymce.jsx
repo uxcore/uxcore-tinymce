@@ -9,9 +9,10 @@
 
 import React from 'react';
 import assign from 'object-assign';
+import PropTypes from 'prop-types';
 import util from './util';
 import EditorConfig from './editorConfig';
-import PropTypes from 'prop-types';
+
 
 // Include all of the Native DOM and custom events from:
 // https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12
@@ -56,15 +57,12 @@ class Tinymce extends React.Component {
     );
   }
 
-  componentWillUnmount() {
-    this.remove();
-  }
-  
+
   componentDidUpdate(prevProps) {
     const { config, content } = this.props;
     if (prevProps.content !== content && window.tinymce) {
       if (this.isInited) {
-        this.setTinymceContent(content);
+        // this.setTinymceContent(content); // 调用后会打断中文输入
       } else {
         this.contentToBeSet = content;
       }
@@ -72,6 +70,10 @@ class Tinymce extends React.Component {
     if (!util.isEqual(config, prevProps.config)) {
       this.init(config, content);
     }
+  }
+
+  componentWillUnmount() {
+    this.remove();
   }
 
 
@@ -168,7 +170,7 @@ Tinymce.propTypes = {
   config: PropTypes.object,
   placeholder: PropTypes.string,
   content: PropTypes.string,
-  changeDelay: PropTypes.number,
+  changeDelay: PropTypes.number,// eslint-disable-line
 };
 
 // add handler propTypes
