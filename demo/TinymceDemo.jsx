@@ -79,6 +79,16 @@ class Demo extends React.Component {
           onKeyup={me.handleKeyUp.bind(me)}
           onChange={me.handleChange.bind(me)}
           content={me.state.content}
+          config={{
+            external_plugins: {
+              upload: 'https://gw.alipayobjects.com/os/lib/uxcore-lib/0.0.34/dist/tinymce/4.2.5/plugins/upload/plugin.min.js'
+            },
+            uploadConfig: {
+              headers: {
+                a: 1
+              }
+            }
+          }}
           placeholder={'placeholder'}
         /> : null}
         <Button onClick={this.handleContentChange}>修改默认值</Button>

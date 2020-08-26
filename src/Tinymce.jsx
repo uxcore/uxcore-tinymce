@@ -113,7 +113,16 @@ class Tinymce extends React.Component {
     }
     // hide the textarea until init finished
     me.root.style.visibility = 'hidden';
-    const trueConfig = assign({}, EditorConfig, config);
+
+    let external_plugins = {
+      ...EditorConfig.external_plugins,
+      ...(config.external_plugins || {})
+    };
+    let uploadConfig = {
+      ...EditorConfig.uploadConfig,
+      ...(config.uploadConfig || {})
+    };
+    const trueConfig = assign({}, EditorConfig, config, {external_plugins, uploadConfig});
     trueConfig.selector = `#${me.id}`;
     if (!trueConfig.language) {
       trueConfig.language = 'zh_CN';
