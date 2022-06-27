@@ -47,7 +47,10 @@ class Tinymce extends React.Component {
   }
 
   componentDidMount() {
-    this.init(this.props.config);
+    // 延迟初始化的过程，防止初始化后立刻被卸载导致的卸载失败问题
+    this.initTimer = setTimeout(() => {
+      this.init(this.props.config);
+    }, 100);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -154,11 +157,12 @@ class Tinymce extends React.Component {
   }
 
   remove() {
+    if (this.initTimer) {
+      clearTimeout(this.initTimer);
+      this.initTimer = undefined;
+    }
     if (window.tinymce) {
       window.tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
-      if (this.editor) {
-        window.tinymce.remove(this.editor);
-      }
     }
     this.isInited = false;
   }
