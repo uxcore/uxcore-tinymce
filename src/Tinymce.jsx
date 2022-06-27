@@ -128,6 +128,7 @@ class Tinymce extends React.Component {
       trueConfig.language = 'zh_CN';
     }
     trueConfig.setup = (editor) => {
+      this.editor = editor;
       EVENTS.forEach((event, index) => {
         const handler = me.props[HANDLER_NAMES[index]];
         if (typeof handler !== 'function') return;
@@ -153,7 +154,12 @@ class Tinymce extends React.Component {
   }
 
   remove() {
-    window.tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
+    if (window.tinymce) {
+      window.tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
+      if (this.editor) {
+        window.tinymce.remove(this.editor);
+      }
+    }
     this.isInited = false;
   }
 
