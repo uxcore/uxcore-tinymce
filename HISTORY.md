@@ -1,3 +1,6 @@
+## 0.2.16
+`FIXED` fail to remove tinymce instance
+
 ## 0.2.12
 `CHANGED` support js style export
 
