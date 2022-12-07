@@ -65,7 +65,11 @@ class Tinymce extends React.Component {
     const { config, content } = this.props;
     if (prevProps.content !== content && window.tinymce) {
       if (this.isInited) {
-        // this.setTinymceContent(content); // 调用后会打断中文输入
+        const editor = window.tinymce.get(this.id);
+        const currentContent = editor.getContent();
+        if (content !== currentContent) {
+          this.setTinymceContent(content); // 调用后会打断中文输入
+        }
       } else {
         this.contentToBeSet = content;
       }
@@ -85,7 +89,7 @@ class Tinymce extends React.Component {
     const editor = window.tinymce.get(me.id);
     editor.setContent(value);
     editor.selection.select(editor.getBody(), true);
-    editor.selection.collapse(false);
+    // editor.selection.collapse(false);
   }
 
   saveRef(refName) {
