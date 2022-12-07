@@ -1,3 +1,6 @@
+## 0.2.18
+`FIXED` content 变化 tinymce 无法感知
+
 ## 0.2.16
 `FIXED` fail to remove tinymce instance
 
