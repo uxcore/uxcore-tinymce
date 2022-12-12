@@ -1,3 +1,6 @@
+## 0.2.19
+`FIXED` SetContent 时会高亮
+
 ## 0.2.18
 `FIXED` content 变化 tinymce 无法感知
 

@@ -89,7 +89,7 @@ class Tinymce extends React.Component {
     const editor = window.tinymce.get(me.id);
     editor.setContent(value);
     editor.selection.select(editor.getBody(), true);
-    // editor.selection.collapse(false);
+    editor.selection.collapse(false);
   }
 
   saveRef(refName) {
