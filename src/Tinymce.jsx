@@ -50,7 +50,8 @@ class Tinymce extends React.Component {
     // 延迟初始化的过程，防止初始化后立刻被卸载导致的卸载失败问题
     this.initTimer = setTimeout(() => {
       this.init(this.props.config);
-    }, 100);
+    }, 200);
+    console.log(`uxcore tinymce mount, id is ${this.id}`);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -81,6 +82,7 @@ class Tinymce extends React.Component {
 
   componentWillUnmount() {
     this.remove();
+    console.log(`uxcore tinymce unmount, id is ${this.id}`);
   }
 
 

@@ -1,3 +1,6 @@
+## 0.2.20
+`CHANGED` init 防抖周期调整为 200ms
+
 ## 0.2.19
 `FIXED` SetContent 时会高亮
 
